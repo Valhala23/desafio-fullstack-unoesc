@@ -59,3 +59,9 @@ O Clone foi feito via source control do VSCode.
 Desenvolvimento será pelo VSCode com spring boot tools adicionados como extensão a IDE.
 Inicialmente será incluida um controller para uma rota e em seguida uma página html com thymeleaf.
 Segundo passo sera configurar o banco de dados mysql e criar os modelos, lembrando que tudo isso será dentro da organização MVC.
+Verifiquei que já existiam as dependencias para o Thymeleaf, somente inclui a pasta templates e o arquivos htmls.
+
+Configurando meu banco mysql. user root pass admin.
+Criado novo banco .. 
+
+mudada porta para 8082 pois a 8080 estava sendo usada
