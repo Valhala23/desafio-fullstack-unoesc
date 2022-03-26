@@ -51,3 +51,11 @@ Para auxílio, elaboramos um diagrama de classes simples, apenas com seus nomes 
 - Sentido e coerência nas respostas aos questionamentos na entrevista de apresentação do desafio realizada pelo candidato.
 
 **Não esqueça de documentar o processo necessário para rodar a aplicação.**
+
+
+
+Para iniciar o desenvolvimento. Foi criado um fork e em seguida clonado o repositório do fork.
+O Clone foi feito via source control do VSCode.
+Desenvolvimento será pelo VSCode com spring boot tools adicionados como extensão a IDE.
+Inicialmente será incluida um controller para uma rota e em seguida uma página html com thymeleaf.
+Segundo passo sera configurar o banco de dados mysql e criar os modelos, lembrando que tudo isso será dentro da organização MVC.
