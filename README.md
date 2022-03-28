@@ -60,14 +60,18 @@ Desenvolvimento será pelo VSCode com spring boot tools adicionados como extens�
 Inicialmente será incluida um controller para uma rota e em seguida uma página html com thymeleaf.
 Segundo passo sera configurar o banco de dados mysql e criar os modelos, lembrando que tudo isso será dentro da organização MVC.
 Verifiquei que já existiam as dependencias para o Thymeleaf, somente inclui a pasta templates e o arquivos htmls.
-
+Configuração do persistence.xml
+incluido modelo de teste e criada classe para inserir dados deste modelo no banco
 Configurando meu banco mysql. user root pass admin.
 Criado novo banco .. 
+Download dos arquivos do bootstrap inseridos em resources / static
+
 
 mudada porta para 8082 pois a 8080 estava sendo usada
 
 
-Gerada chave para validar a api do governo
+Cadastro em gov.br e autenticação em 2 etapas para o governo
+Gerada chave para validar a api do governo 
 Chave:
         "[{"key":"chave-api-dados","value":"89a1eb42132334772bf1737348d48fb5"}]
 		Código ibge municipio 4207809

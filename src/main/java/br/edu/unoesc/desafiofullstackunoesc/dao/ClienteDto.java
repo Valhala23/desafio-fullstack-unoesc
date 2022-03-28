@@ -1,4 +1,4 @@
-package br.edu.unoesc.desafiofullstackunoesc.dto;
+package br.edu.unoesc.desafiofullstackunoesc.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,8 +18,8 @@ public class ClienteDto {
         = Persistence.createEntityManagerFactory("Clientes-PU");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
     Cliente cliente = new Cliente();    
-    cliente.setId(44);
-    cliente.setNome("Armazém teste insere");
+    cliente.setId(54);
+    cliente.setNome("Permanecer banco dao");
 
     entityManager.getTransaction().begin();
     entityManager.persist(cliente);
