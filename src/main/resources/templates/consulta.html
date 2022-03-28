@@ -8,13 +8,49 @@
     <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">    
 </head>
 <body>
-    <div class="cabecalho">
-        <h1> Consulta auxilio emergencial </h1>
-    </div>
 
-    <div class="div">
-        <p>Ano e mês</p>
-        <input type="text">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1> Consulta auxilio emergencial </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Ano e mês</p>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button> fazer consulta</button>
+            </div>
+            <div class="col">
+                <a href="/"> Voltar ao inicio</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 mt-5 mb-5">
+                <table id="example" class="table table-bordered" style="width: 100%">
+                    <thead>
+                    <tr>
+                        <th>Municipio</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- <tr th:each="ibgecon : ${ibgecons.page.content}">
+                        <td th:text="${ibgecon.name}">Name</td>
+                        <td th:text="${ibgecon.position}">Position</td>
+                        <td th:text="${ibgecon.office}">Office</td>
+                    </tr> -->
+                    </tbody>
+                </table>
+        </div>
+
     </div>
 
 </body>
