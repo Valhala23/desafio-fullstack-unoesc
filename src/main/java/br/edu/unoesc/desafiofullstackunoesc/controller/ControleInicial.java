@@ -23,6 +23,12 @@ public class ControleInicial {
         return "index";
 	}    
 
+    @GetMapping("/consultabeneficios")
+	public String consultaaux()
+    {        
+        return "consulta";
+	}    
+
     @GetMapping("/testeinsere")
 	public String insereTeste()
     {     
