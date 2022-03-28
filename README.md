@@ -65,3 +65,10 @@ Configurando meu banco mysql. user root pass admin.
 Criado novo banco .. 
 
 mudada porta para 8082 pois a 8080 estava sendo usada
+
+
+Gerada chave para validar a api do governo
+Chave:
+        "[{"key":"chave-api-dados","value":"89a1eb42132334772bf1737348d48fb5"}]
+		Código ibge municipio 4207809
+        
