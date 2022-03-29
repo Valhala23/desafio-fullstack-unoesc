@@ -6,11 +6,13 @@ import javax.persistence.Persistence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import br.edu.unoesc.desafiofullstackunoesc.dao.ClienteDto;
 import br.edu.unoesc.desafiofullstackunoesc.model.Cliente;
 
+@CrossOrigin
 @Controller
 public class ControleInicial {
 
@@ -21,13 +23,7 @@ public class ControleInicial {
 	public String indice()
     {        
         return "index";
-	}    
-
-    @GetMapping("/consultabeneficios")
-	public String consultaaux()
-    {        
-        return "consulta";
-	}    
+	}       
 
     @GetMapping("/testeinsere")
 	public String insereTeste()

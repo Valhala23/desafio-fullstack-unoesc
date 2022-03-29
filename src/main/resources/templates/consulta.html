@@ -6,26 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta auxilio emergencial </title>
     <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">    
+    <script type="text/javascript">
+
+    </script>
 </head>
 <body>
 
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1> Consulta auxilio emergencial </h1>
+        <form th:action="@{/beneficio}">
+            <div class="row">
+                <div class="col">
+                    <p>Ano e mês</p>
+                    <input type="text" th:name="data">
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col">
-                <p>Ano e mês</p>
-                <input type="text">
+            <div class="row">
+                <div class="col">
+                    <p>Código da cidade no IBGE</p>
+                    <input type="text" th:name="data">
+                </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <button> fazer consulta</button>
+                </div>
+        </form>
         </div>
-        <div class="row">
-            <div class="col">
-                <button> fazer consulta</button>
-            </div>
             <div class="col">
                 <a href="/"> Voltar ao inicio</a>
             </div>
@@ -41,13 +48,13 @@
                         <th>Valor</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <!-- <tr th:each="ibgecon : ${ibgecons.page.content}">
-                        <td th:text="${ibgecon.name}">Name</td>
-                        <td th:text="${ibgecon.position}">Position</td>
+                    <!-- <tbody>
+                    <tr th:each="id : ${userIds.id}">
+                        <td th:text="${ibgecon.codIbge}">Name</td>
+                        <td th:text="${ibgecon.data}">Position</td>
                         <td th:text="${ibgecon.office}">Office</td>
-                    </tr> -->
-                    </tbody>
+                    </tr>
+                    </tbody> -->
                 </table>
         </div>
 
