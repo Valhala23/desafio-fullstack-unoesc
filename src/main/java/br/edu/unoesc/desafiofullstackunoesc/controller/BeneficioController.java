@@ -59,14 +59,14 @@ public class BeneficioController {
         HttpEntity request = new HttpEntity(headers);
 
         // make an HTTP GET request with headers
-        ResponseEntity<String> response = restTemplate.exchange(
+        ResponseEntity<Object[]> response = restTemplate.exchange(
                 url,
                 HttpMethod.GET,
                 request,
-                String.class,
+                Object[].class,
                 1
         );
-        String auxs = "vazio";
+        Object[] auxs = {};
         if (response.getStatusCode() == HttpStatus.OK) {
             System.out.println("Request Successful.");
             auxs = response.getBody();

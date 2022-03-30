@@ -11,33 +11,39 @@
     </script>
 </head>
 <body>
-    <h1>Lista dosauxilios distribuidos no municipipo</h1>
+    <h1>Lista dos auxilios distribuidos no municipipo</h1>
     <div class="container">
         <div class="row">
-            
-                <!-- <table id="example" class="table table-bordered" style="width: 100%">
+            <div class="col">
+                <a href="/"> Voltar ao inicio</a>
+            </div>
+        </div>
+
+        <p>Tabela simples</p>
+        <div class="row">            
+                <table id="tabela" class="table" style="width: 100%">
                     <thead>
                     <tr>
+                        <th>Nome</th>
                         <th>Municipio</th>
-                        <th>Data</th>
                         <th>Valor</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="id : ${userIds.id}">
-                        <td th:text="${ibgecon.codIbge}">Name</td>
-                        <td th:text="${ibgecon.data}">Position</td>
-                        <td th:text="${ibgecon.office}">Office</td>
+                    <tr th:each="axs : ${auxs}">
+                        <td th:text="${axs.beneficiario.nome}"></td>
+                        <td th:text="${axs.municipio.nomeIBGE}"></td>
+                        <td th:text="${axs.valor}"></td>
                     </tr>
                     </tbody>
-                </table> -->
+                </table>
 
                 <p>Por enquanto lista simpes</p>
                 
                 <!-- <div class="col">
                     <div th:each="axs : ${auxs}">
                         <hr>
-                        <h4 th:text="'Auxilo: ' + ${axs.beneficiario} "></h4>
+                        <h4 th:text="'Auxilo: ' + ${axs.beneficiario.nome} "></h4>
                     </div>
                 </div> -->
         </div>
