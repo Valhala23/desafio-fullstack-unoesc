@@ -20,14 +20,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.edu.unoesc.desafiofullstackunoesc.dao.ClienteDto;
+import br.edu.unoesc.desafiofullstackunoesc.dao.ClienteDao;
 
 @CrossOrigin
 @Controller
 public class BeneficioController {
 
     @Autowired  
-    ClienteDto clidto = new ClienteDto();
+    ClienteDao clidto = new ClienteDao();
 
     @GetMapping("/consultabeneficios")
 	public String consultaaux()

@@ -6,10 +6,11 @@ import javax.persistence.Persistence;
 
 import org.springframework.stereotype.Service;
 
+import br.edu.unoesc.desafiofullstackunoesc.model.AuxilioEmergencial;
 import br.edu.unoesc.desafiofullstackunoesc.model.Cliente;
 
 @Service
-public class ClienteDto {
+public class AuxilioEmergencialDao {
 
     public void insere(){
             // Teste inserção
@@ -34,8 +35,8 @@ public class ClienteDto {
             = Persistence.createEntityManagerFactory("Clientes-PU");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        Cliente cliente = entityManager.find(Cliente.class, 1);
-        System.out.println(cliente.getNome());
+        AuxilioEmergencial auxilio = entityManager.find(AuxilioEmergencial.class, 1);
+        System.out.println(auxilio.getValorTotal());
 
         entityManager.close();
         entityManagerFactory.close(); 

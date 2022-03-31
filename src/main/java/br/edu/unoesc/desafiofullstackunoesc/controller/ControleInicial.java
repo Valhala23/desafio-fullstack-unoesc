@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.edu.unoesc.desafiofullstackunoesc.dao.ClienteDto;
+import br.edu.unoesc.desafiofullstackunoesc.dao.ClienteDao;
 import br.edu.unoesc.desafiofullstackunoesc.model.Cliente;
 
 @CrossOrigin
@@ -17,7 +17,7 @@ import br.edu.unoesc.desafiofullstackunoesc.model.Cliente;
 public class ControleInicial {
 
     @Autowired  
-    ClienteDto clidto = new ClienteDto();
+    ClienteDao clidto = new ClienteDao();
 
     @GetMapping("/")
 	public String indice()
