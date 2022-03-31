@@ -1,7 +1,9 @@
 package br.edu.unoesc.desafiofullstackunoesc.controller;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+
 import br.edu.unoesc.desafiofullstackunoesc.dao.ClienteDto;
 
 @CrossOrigin
@@ -48,11 +52,15 @@ public class BeneficioController {
         //@RequestParam(value = "pg", required = false) Integer pg,
         Model model
     ) {
-        String url = "https://api.portaldatransparencia.gov.br/api-de-dados/auxilio-emergencial-beneficiario-por-municipio?codigoIbge=4207809&mesAno=202012&pagina%20=1";
+        String url = "https://api.portaldatransparencia.gov.br/api-de-dados/auxilio-emergencial-beneficiario-por-municipio?codigoIbge={ibge}&mesAno={mesano}&pagina%20=1";
+        
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
+        Map<String, String> urlParams = new HashMap<>();
+        urlParams.put("ibge", codIbge);
+        urlParams.put("mesano", data);       
+                
         RestTemplate restTemplate = new RestTemplate();
-
         HttpHeaders headers = new HttpHeaders();
-
         //Object[] auxs = restTemplate.patchForObject(url, entity, Object[].class);
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         headers.set("chave-api-dados", "c07b50fda5b4065168455533a1a1ebeb");
@@ -60,12 +68,11 @@ public class BeneficioController {
 
         // make an HTTP GET request with headers
         ResponseEntity<Object[]> response = restTemplate.exchange(
-                url,
+                builder.buildAndExpand(urlParams).toUri(),
                 HttpMethod.GET,
                 request,
-                Object[].class,
-                1
-        );
+                Object[].class);
+                
         Object[] auxs = {};
         if (response.getStatusCode() == HttpStatus.OK) {
             System.out.println("Request Successful.");
