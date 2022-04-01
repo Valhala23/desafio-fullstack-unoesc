@@ -76,3 +76,15 @@ Chave:
 		 "[{"key":"chave-api-dados","value":"c07b50fda5b4065168455533a1a1ebeb"}]
 		Código ibge municipio 4207809
         
+
+
+Criação das tabelas no banco
+
+create table UnidadeFederativa 
+(
+id int not null auto_increment,
+codigo long not null,
+sigla varchar(5),
+nome varchar(255),
+primary key(id)
+);
