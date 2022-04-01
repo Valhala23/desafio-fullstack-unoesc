@@ -18,8 +18,8 @@ public class ClienteDao {
         = Persistence.createEntityManagerFactory("Clientes-PU");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
     Cliente cliente = new Cliente();    
-    cliente.setId(54);
-    cliente.setNome("Permanecer banco dao");
+    cliente.setId(64);
+    cliente.setNome("Permanecer banco continua inserindo");
 
     entityManager.getTransaction().begin();
     entityManager.persist(cliente);

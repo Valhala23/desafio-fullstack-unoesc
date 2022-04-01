@@ -5,8 +5,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.springframework.stereotype.Service;
-
-import br.edu.unoesc.desafiofullstackunoesc.model.Cliente;
 import br.edu.unoesc.desafiofullstackunoesc.model.UnidadeFederativa;
 
 @Service
@@ -18,12 +16,13 @@ public class UnidadeFederativaDao {
     EntityManagerFactory entityManagerFactory 
         = Persistence.createEntityManagerFactory("Clientes-PU");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
-    Cliente cliente = new Cliente();    
-    cliente.setId(54);
-    cliente.setNome("Permanecer banco dao");
+    UnidadeFederativa uf = new UnidadeFederativa();    
+    uf.setId(20);
+    uf.setCodigo((long) 42);
+    uf.setNome("Permanecer unidade no banco dao");
 
     entityManager.getTransaction().begin();
-    entityManager.persist(cliente);
+    entityManager.persist(uf);
     entityManager.getTransaction().commit();
 
     entityManager.close();
