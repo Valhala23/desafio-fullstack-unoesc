@@ -20,8 +20,6 @@ public class Municipio {
     private String nomeRegiao;
     @Column(name = "pais")
     private String pais;        
-    @Column(name = "nome")
-    private String nome;
     // UnidadeFederativa
     
     public Municipio(Integer id, Long codigo, Long codigoIbge, String nomeIbge, String codigoRegiao, String nomeRegiao,
@@ -33,7 +31,6 @@ public class Municipio {
         this.codigoRegiao = codigoRegiao;
         this.nomeRegiao = nomeRegiao;
         this.pais = pais;
-        this.nome = nome;
     }
 
     public Municipio() {
@@ -93,14 +90,6 @@ public class Municipio {
 
     public void setPais(String pais) {
         this.pais = pais;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
     
 }

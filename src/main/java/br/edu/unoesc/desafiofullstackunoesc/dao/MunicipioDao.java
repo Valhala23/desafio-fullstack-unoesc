@@ -36,7 +36,7 @@ public class MunicipioDao  {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         Municipio municipio = entityManager.find(Municipio.class, 1);
-        System.out.println(municipio.getNome());
+        System.out.println(municipio.getNomeIbge());
 
         entityManager.close();
         entityManagerFactory.close(); 
