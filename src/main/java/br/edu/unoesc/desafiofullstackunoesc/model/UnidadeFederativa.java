@@ -7,8 +7,6 @@ import javax.persistence.Id;
 @Entity
 public class UnidadeFederativa {
     @Id
-    private Integer id;
-    @Column(name = "codigo")
     private Long codigo;    
     @Column(name = "sigla")
     private String sigla;    
@@ -16,27 +14,15 @@ public class UnidadeFederativa {
     private String nome;
     
     
-    public UnidadeFederativa(Integer id, Long codigo, String sigla, String nome) {
-        this.id = id;
-        this.codigo = codigo;
-        this.sigla = sigla;
-        this.nome = nome;
-    }
-
-
     public UnidadeFederativa() {
     }
 
 
-    public Integer getId() {
-        return id;
+    public UnidadeFederativa(Long codigo, String sigla, String nome) {
+        this.codigo = codigo;
+        this.sigla = sigla;
+        this.nome = nome;
     }
-
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
 
     public Long getCodigo() {
         return codigo;

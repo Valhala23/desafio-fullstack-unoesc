@@ -3,7 +3,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -18,14 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.edu.unoesc.desafiofullstackunoesc.dao.ClienteDao;
 
 @CrossOrigin
 @Controller
 public class BeneficioController {
-
-    @Autowired  
-    ClienteDao clidto = new ClienteDao();
 
     @GetMapping("/consultabeneficios")
 	public String consultaaux()
@@ -47,7 +42,7 @@ public class BeneficioController {
     public String auxilio(
         @RequestParam(value = "codIbge", required = false) String codIbge,
         @RequestParam(value = "data", required = false) String data,
-        //@RequestParam(value = "pg", required = false) Integer pg,
+        @RequestParam(value = "pg", required = false) Integer pg,
         Model model
     ) {
         String url = "https://api.portaldatransparencia.gov.br/api-de-dados/auxilio-emergencial-beneficiario-por-municipio?codigoIbge={ibge}&mesAno={mesano}&pagina%20=1";

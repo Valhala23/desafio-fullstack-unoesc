@@ -1,21 +1,20 @@
 package br.edu.unoesc.desafiofullstackunoesc.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.edu.unoesc.desafiofullstackunoesc.dao.ClienteDao;
-import br.edu.unoesc.desafiofullstackunoesc.dao.UnidadeFederativaDao;
+import br.edu.unoesc.desafiofullstackunoesc.model.Cliente;
+import br.edu.unoesc.desafiofullstackunoesc.repository.ClienteRepository;
+
+
+
 @CrossOrigin
 @Controller
 public class ControleInicial {
 
-    @Autowired  
-    ClienteDao clidao = new ClienteDao();
-
-    @Autowired  
-    UnidadeFederativaDao ufDao = new UnidadeFederativaDao();
+    //@Autowired
+    ClienteRepository clienteRepo;
 
     @GetMapping("/")
 	public String indice()
@@ -28,7 +27,12 @@ public class ControleInicial {
     {     
 
         try {
-            clidao.insere(); 
+           // Para teste vou criar um cliente aqui e salvat
+           Cliente cli = new Cliente();
+           cli.setId(Long.valueOf(78));
+           cli.setNome("salvo por repository");
+
+           //clienteRepo.save(cli);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
@@ -36,28 +40,28 @@ public class ControleInicial {
         return "index";
 	} 
 
-    @GetMapping("/testeinf")
-	public String insereUfTeste()
-    {     
+    // @GetMapping("/testeinf")
+	// public String insereUfTeste()
+    // {     
 
-        try {
-            ufDao.insere(); 
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+    //     try {
+    //         ufDao.insere(); 
+    //     }catch(Exception e){
+    //         System.out.println(e.getMessage());
+    //     }
 
-        return "index";
-	} 
+    //     return "index";
+	// } 
     
-    @GetMapping("/testesel")
-	public String selecionaTeste()
-    { 
-        try {
-            clidao.seleciona(); 
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+    // @GetMapping("/testesel")
+	// public String selecionaTeste()
+    // { 
+    //     try {
+    //        // clidao.seleciona(); 
+    //     }catch(Exception e){
+    //         System.out.println(e.getMessage());
+    //     }
 
-        return "index";
-	} 
+    //     return "index";
+	// } 
 }

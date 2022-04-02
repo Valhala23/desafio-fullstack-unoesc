@@ -1,24 +1,26 @@
 package br.edu.unoesc.desafiofullstackunoesc.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Cliente {
     @Id
-    private Integer id;
-    @Column(name = "nome")
+    private Long id;
     private String nome;
     
-    public Cliente(Integer id, String nome) {
+    public Cliente() {
+        
+    }
+
+    public Cliente(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
-    
-    public Cliente() {
-    }
-    public Integer getId() {
+
+    public Long getId() {
         return id;
     }
     public String getNome() {
@@ -27,7 +29,7 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
     

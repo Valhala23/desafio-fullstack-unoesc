@@ -7,8 +7,6 @@ import javax.persistence.Id;
 @Entity
 public class Municipio {
     @Id
-    private Integer id;
-    @Column(name = "codigo")
     private Long codigo;    
     @Column(name = "codigoibge")
     private Long codigoIbge;
@@ -22,9 +20,8 @@ public class Municipio {
     private String pais;        
     // UnidadeFederativa
     
-    public Municipio(Integer id, Long codigo, Long codigoIbge, String nomeIbge, String codigoRegiao, String nomeRegiao,
+    public Municipio(Long codigo, Long codigoIbge, String nomeIbge, String codigoRegiao, String nomeRegiao,
             String pais, String nome) {
-        this.id = id;
         this.codigo = codigo;
         this.codigoIbge = codigoIbge;
         this.nomeIbge = nomeIbge;
@@ -34,14 +31,6 @@ public class Municipio {
     }
 
     public Municipio() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Long getCodigo() {
