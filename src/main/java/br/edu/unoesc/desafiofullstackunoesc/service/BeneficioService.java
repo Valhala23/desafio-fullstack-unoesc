@@ -20,8 +20,8 @@ public class BeneficioService
     AuxilioEmRepository auxRepo;
     public String persisteBeneficio(List<AuxilioEmergencial> listaAux){
         String resultado = "Não foi possivel salvar";
-        for (AuxilioEmergencial beneficioMapeamento : listaAux) {
-            System.out.println();   
+        for (AuxilioEmergencial auxilio : listaAux) {
+            auxRepo.save(auxilio);
         }
 
         return resultado;

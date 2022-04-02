@@ -5,6 +5,8 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
@@ -13,7 +15,7 @@ import com.google.gson.annotations.SerializedName;
 @Entity
 public class AuxilioEmergencial {
     
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @SerializedName(value="id", alternate="codigo")
     private Long codigo;    
     @Column(name = "dataconsulta")
