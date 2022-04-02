@@ -6,21 +6,29 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import com.google.gson.annotations.SerializedName;
 
 @Entity
 public class AuxilioEmergencial {
     
     @Id
+    @SerializedName(value="id", alternate="codigo")
     private Long codigo;    
     @Column(name = "dataconsulta")
     private Date dataConsulta;
     // Municipio
+    @SerializedName(value="numeroParcela", alternate="parcela")
     @Column(name = "numeroparcela")
     private String numeroParcela;
     @Column(name = "valortotal")
-    private BigDecimal valorTotal;
+    @SerializedName(value="valor", alternate="valorTotal")
+    private double valorTotal;
+    @SerializedName(value="mesDisponibilizacao", alternate="mesano")
+    @Transient String dataAux;    
     
-    public AuxilioEmergencial(Long codigo, Date dataConsulta, String numeroParcela, BigDecimal valorTotal) {
+    public AuxilioEmergencial(Long codigo, Date dataConsulta, String numeroParcela, double valorTotal) {
         this.codigo = codigo;
         this.dataConsulta = dataConsulta;
         this.numeroParcela = numeroParcela;
@@ -54,12 +62,20 @@ public class AuxilioEmergencial {
         this.numeroParcela = numeroParcela;
     }
 
-    public BigDecimal getValorTotal() {
+    public double getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(BigDecimal valorTotal) {
+    public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public String getDataAux() {
+        return dataAux;
+    }
+
+    public void setDataAux(String dataAux) {
+        this.dataAux = dataAux;
     }
 
     

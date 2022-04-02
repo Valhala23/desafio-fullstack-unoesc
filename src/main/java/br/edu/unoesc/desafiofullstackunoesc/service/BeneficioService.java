@@ -10,7 +10,6 @@ import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.unoesc.desafiofullstackunoesc.mapeamento.BeneficioMapeamento;
 import br.edu.unoesc.desafiofullstackunoesc.model.AuxilioEmergencial;
 import br.edu.unoesc.desafiofullstackunoesc.repository.AuxilioEmRepository;
 
@@ -19,9 +18,9 @@ public class BeneficioService
 {
     @Autowired
     AuxilioEmRepository auxRepo;
-    public String persisteBeneficio(List<BeneficioMapeamento> listaAux){
+    public String persisteBeneficio(List<AuxilioEmergencial> listaAux){
         String resultado = "Não foi possivel salvar";
-        for (BeneficioMapeamento beneficioMapeamento : listaAux) {
+        for (AuxilioEmergencial beneficioMapeamento : listaAux) {
             System.out.println();   
         }
 
@@ -37,9 +36,9 @@ public class BeneficioService
         //     System.out.println(obj.toString());
             try {
 
-                Type listOfMyClassObject = new TypeToken<ArrayList<BeneficioMapeamento>>() {}.getType();            
+                Type listOfMyClassObject = new TypeToken<ArrayList<AuxilioEmergencial>>() {}.getType();            
                 Gson gson = new Gson();
-                List<BeneficioMapeamento> outputList = gson.fromJson(lista, listOfMyClassObject);
+                List<AuxilioEmergencial> outputList = gson.fromJson(lista, listOfMyClassObject);
 
                 
             } catch (Exception e) {

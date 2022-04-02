@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.edu.unoesc.desafiofullstackunoesc.mapeamento.BeneficioMapeamento;
+import br.edu.unoesc.desafiofullstackunoesc.model.AuxilioEmergencial;
 import br.edu.unoesc.desafiofullstackunoesc.service.BeneficioService;
 
 
@@ -87,7 +87,7 @@ public class BeneficioController {
         }
         // Tentativa de mapear
 
-        List<BeneficioMapeamento> auxilios = new Gson().fromJson(response.getBody(), new TypeToken<List<BeneficioMapeamento>>() {}.getType());
+        List<AuxilioEmergencial> auxilios = new Gson().fromJson(response.getBody(), new TypeToken<List<AuxilioEmergencial>>() {}.getType());
 
         model.addAttribute("auxs", auxilios);
         beneficioService.persisteBeneficio(auxilios);
