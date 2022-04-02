@@ -77,40 +77,7 @@ Chave:
 		Código ibge municipio 4207809
         
 
+Criação do database
+create database unoescdesafio;
+Jpa faz automaticamente a criação das tabelas no banco
 
-Criação das tabelas no banco
-
-create table UnidadeFederativa 
-(
-	id int not null auto_increment,
-	codigo long not null,
-	sigla varchar(5),
-	nome varchar(255),
-	primary key(id)
-);
-
-create table municipio 
-(
-	id int not null auto_increment,
-	codigo long not null,
-	codigoibge long not null,
-	nomeIbge varchar(255),
-	codigoregiao varchar(55),
-	nomeregiao varchar(255),
-	pais varchar(55),
-	unidadefederativa int not null,
-	primary key(id)
-);
-
-
-
-create table auxilioemergencial 
-(
-	id int not null auto_increment,
-	codigo long not null,
-	dataconsulta date,
-	municipio int,
-	numeroparcela varchar(55),
-	valortotal decimal(14,2),
-	primary key(id)
-);

@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.edu.unoesc.desafiofullstackunoesc.model.Cliente;
-import br.edu.unoesc.desafiofullstackunoesc.repository.ClienteRepository;
+import br.edu.unoesc.desafiofullstackunoesc.model.Municipio;
+import br.edu.unoesc.desafiofullstackunoesc.repository.MunicipioRepository;
 
 
 
@@ -13,8 +13,8 @@ import br.edu.unoesc.desafiofullstackunoesc.repository.ClienteRepository;
 @Controller
 public class ControleInicial {
 
-    //@Autowired
-    ClienteRepository clienteRepo;
+    @Autowired
+    MunicipioRepository dao;
 
     @GetMapping("/")
 	public String indice()
@@ -28,11 +28,11 @@ public class ControleInicial {
 
         try {
            // Para teste vou criar um cliente aqui e salvat
-           Cliente cli = new Cliente();
-           cli.setId(Long.valueOf(78));
-           cli.setNome("salvo por repository");
+           Municipio mun = new Municipio();
+           mun.setCodigo(Long.valueOf(8));
+           mun.setNomeIbge("salvo por repository");
 
-           //clienteRepo.save(cli);
+           dao.save(mun);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
