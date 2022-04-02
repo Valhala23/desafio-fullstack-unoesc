@@ -9,9 +9,8 @@ import javax.persistence.Id;
 
 @Entity
 public class AuxilioEmergencial {
+    
     @Id
-    private Integer id;
-    @Column(name = "codigo")
     private Long codigo;    
     @Column(name = "dataconsulta")
     private Date dataConsulta;
@@ -21,8 +20,7 @@ public class AuxilioEmergencial {
     @Column(name = "valortotal")
     private BigDecimal valorTotal;
     
-    public AuxilioEmergencial(Integer id, Long codigo, Date dataConsulta, String numeroParcela, BigDecimal valorTotal) {
-        this.id = id;
+    public AuxilioEmergencial(Long codigo, Date dataConsulta, String numeroParcela, BigDecimal valorTotal) {
         this.codigo = codigo;
         this.dataConsulta = dataConsulta;
         this.numeroParcela = numeroParcela;
@@ -30,14 +28,6 @@ public class AuxilioEmergencial {
     }
 
     public AuxilioEmergencial() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Long getCodigo() {

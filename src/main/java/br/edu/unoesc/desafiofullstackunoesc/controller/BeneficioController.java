@@ -1,8 +1,14 @@
 package br.edu.unoesc.desafiofullstackunoesc.controller;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -17,10 +23,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.edu.unoesc.desafiofullstackunoesc.mapeamento.BeneficioMapeamento;
+import br.edu.unoesc.desafiofullstackunoesc.service.BeneficioService;
+
 
 @CrossOrigin
 @Controller
 public class BeneficioController {
+
+    @Autowired
+    BeneficioService beneficioService;
 
     @GetMapping("/consultabeneficios")
 	public String consultaaux()
@@ -60,24 +72,37 @@ public class BeneficioController {
         HttpEntity request = new HttpEntity(headers);
 
         // make an HTTP GET request with headers
-        ResponseEntity<Object[]> response = restTemplate.exchange(
+        ResponseEntity<String> response = restTemplate.exchange(
                 builder.buildAndExpand(urlParams).toUri(),
                 HttpMethod.GET,
                 request,
-                Object[].class);
-                
-        Object[] auxs = {};
+                String.class);
+
         if (response.getStatusCode() == HttpStatus.OK) {
             System.out.println("Request Successful.");
-            auxs = response.getBody();
+            
         } else {
             System.out.println("Request Failed");
             System.out.println(response.getStatusCode());
         }
-        
-        model.addAttribute("auxs", auxs);
+        // Tentativa de mapear
 
-        return "auxilio";
+        //ObjectsWrapper objects = new ObjectsWrapper(response.getBody());
+        // Gson gson = new Gson();
+        // String jsonString = null;
+        // jsonString = gson.toJson(objects);
+
+        // Try to construct the list of User fro JSON string.
+
+        List<BeneficioMapeamento> users = new Gson().fromJson(response.getBody(), new TypeToken<List<BeneficioMapeamento>>() {}.getType());
+
+        // fim mapeamento
+
+
+        //model.addAttribute("auxs", response.getBody());
+        // beneficioService.mapear(response.getBody());
+
+        return "consulta";
     }
 
 }
