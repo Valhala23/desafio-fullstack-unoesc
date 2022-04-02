@@ -87,22 +87,12 @@ public class BeneficioController {
         }
         // Tentativa de mapear
 
-        //ObjectsWrapper objects = new ObjectsWrapper(response.getBody());
-        // Gson gson = new Gson();
-        // String jsonString = null;
-        // jsonString = gson.toJson(objects);
+        List<BeneficioMapeamento> auxilios = new Gson().fromJson(response.getBody(), new TypeToken<List<BeneficioMapeamento>>() {}.getType());
 
-        // Try to construct the list of User fro JSON string.
+        model.addAttribute("auxs", auxilios);
+        beneficioService.persisteBeneficio(auxilios);
 
-        List<BeneficioMapeamento> users = new Gson().fromJson(response.getBody(), new TypeToken<List<BeneficioMapeamento>>() {}.getType());
-
-        // fim mapeamento
-
-
-        //model.addAttribute("auxs", response.getBody());
-        // beneficioService.mapear(response.getBody());
-
-        return "consulta";
+        return "auxilio";
     }
 
 }

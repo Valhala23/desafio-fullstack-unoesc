@@ -24,15 +24,15 @@
                 <table id="tabela" class="table" style="width: 100%">
                     <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Município</th>
+                        <th>Data</th>
+                        <th>Parcela</th>
                         <th>Valor</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="axs : ${auxs}">
-                        <td th:text="${axs.beneficiario.nome}"></td>
-                        <td th:text="${axs.municipio.nomeIBGE}"></td>
+                        <td th:text="${axs.mesDisponibilizacao}"></td>
+                        <td th:text="${axs.numeroParcela}"></td>
                         <td th:text="${axs.valor}"></td>
                     </tr>
                     </tbody>

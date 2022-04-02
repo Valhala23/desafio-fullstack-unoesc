@@ -7,16 +7,23 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.unoesc.desafiofullstackunoesc.mapeamento.BeneficioMapeamento;
 import br.edu.unoesc.desafiofullstackunoesc.model.AuxilioEmergencial;
+import br.edu.unoesc.desafiofullstackunoesc.repository.AuxilioEmRepository;
 
 @Service
 public class BeneficioService 
 {
-    public String persisteBeneficio(){
+    @Autowired
+    AuxilioEmRepository auxRepo;
+    public String persisteBeneficio(List<BeneficioMapeamento> listaAux){
         String resultado = "Não foi possivel salvar";
+        for (BeneficioMapeamento beneficioMapeamento : listaAux) {
+            System.out.println();   
+        }
 
         return resultado;
     }
