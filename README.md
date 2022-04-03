@@ -70,7 +70,7 @@ Criado novo banco ..
 Download dos arquivos do bootstrap inseridos em resources / static
 
 
-mudada porta para 8082 pois a 8080 estava sendo usada
+mudada porta para 8081 pois a 8080 estava sendo usada
 
 
 Cadastro em gov.br e autenticação em 2 etapas para o governo

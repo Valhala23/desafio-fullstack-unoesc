@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
 
+import br.edu.unoesc.desafiofullstackunoesc.dto.UsuarioDto;
 import br.edu.unoesc.desafiofullstackunoesc.model.Municipio;
 import br.edu.unoesc.desafiofullstackunoesc.model.Usuario;
 import br.edu.unoesc.desafiofullstackunoesc.repository.MunicipioRepository;
@@ -33,14 +34,14 @@ public class ControleInicial {
     @GetMapping("/cadastro")
 	public String cadastronovo(Model model)
     {  
-        model.addAttribute("usuario", new Usuario());      
+        model.addAttribute("usuario", new UsuarioDto());      
         return "cadastro";
 	}
 
     @PatchMapping("/concluidocadastro")
 	public String concluicadastro(@ModelAttribute("usuario") Usuario usuario, Model model)
     {     
-        model.addAttribute("usuario", new Usuario());
+        model.addAttribute("usuario", new UsuarioDto());
         usuarioService.salvaUsuario(usuario);
         return "/";
 	}
