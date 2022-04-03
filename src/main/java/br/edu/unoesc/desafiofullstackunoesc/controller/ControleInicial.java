@@ -38,8 +38,9 @@ public class ControleInicial {
 	}
 
     @PatchMapping("/concluidocadastro")
-	public String concluicadastro(@ModelAttribute("usuario") Usuario usuario)
+	public String concluicadastro(@ModelAttribute("usuario") Usuario usuario, Model model)
     {     
+        model.addAttribute("usuario", new Usuario());
         usuarioService.salvaUsuario(usuario);
         return "/";
 	}

@@ -30,7 +30,7 @@
                <p>informações para usar no login</p>
            </div>
 
-           <form th:action="@{/concluidocadastro}" method="post" th:object="${usuario}">
+           <form action="#" th:action="@{/concluidocadastro}" th:object="${usuario}" method="post">
                 <div class="row">
                     <div class="col-4">
                         <p>login</p>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="row" style="margin-top: 2%;">
                     <div class="col">
-                        <button type="submit">Cadastrar</button>
+                        <button type="submit" value="Submit">Cadastrar</button>
                     </div>
                 </div>
             </form>

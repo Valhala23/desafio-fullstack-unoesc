@@ -60,8 +60,8 @@ Desenvolvimento será pelo VSCode com spring boot tools adicionados como extens�
 Inicialmente será incluida um controller para uma rota e em seguida uma página html com thymeleaf.
 Segundo passo sera configurar o banco de dados mysql e criar os modelos, lembrando que tudo isso será dentro da organização MVC.
 Verifiquei que já existiam as dependencias para o Thymeleaf, somente inclui a pasta templates e o arquivos htmls.
-Configuração do persistence.xml
-incluido modelo de teste e criada classe para inserir dados deste modelo no banco
+Configuração do application.properties
+Incluidos modeloes de dados
 Configurando meu banco mysql. user root pass admin.
 Criado novo banco .. 
 Download dos arquivos do bootstrap inseridos em resources / static
