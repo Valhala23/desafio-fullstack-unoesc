@@ -52,6 +52,9 @@ Para auxílio, elaboramos um diagrama de classes simples, apenas com seus nomes 
 
 **Não esqueça de documentar o processo necessário para rodar a aplicação.**
 
+Login e senha para o site.
+admin
+admin
 
 
 Para iniciar o desenvolvimento. Foi criado um fork e em seguida clonado o repositório do fork.
