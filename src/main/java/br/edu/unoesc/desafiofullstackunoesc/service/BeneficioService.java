@@ -1,6 +1,8 @@
 package br.edu.unoesc.desafiofullstackunoesc.service;
 
 import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,16 @@ public class BeneficioService
     public String persisteBeneficio(List<AuxilioEmergencial> listaAux){
         String resultado = "Não foi possivel salvar";
         for (AuxilioEmergencial auxilio : listaAux) {
-            auxRepo.save(auxilio);
+            
+            try {
+                
+                //auxilio.setDataConsulta(new SimpleDateFormat("dd/MM/yyyy").parse(auxilio.getDataAux()));
+                auxRepo.save(auxilio);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }           
+
         }
 
         return resultado;

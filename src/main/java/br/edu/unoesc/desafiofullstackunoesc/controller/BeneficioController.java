@@ -90,7 +90,7 @@ public class BeneficioController {
         List<AuxilioEmergencial> auxilios = new Gson().fromJson(response.getBody(), new TypeToken<List<AuxilioEmergencial>>() {}.getType());
 
         model.addAttribute("auxs", auxilios);
-        //beneficioService.persisteBeneficio(auxilios);
+        beneficioService.persisteBeneficio(auxilios);
 
         return "auxilio";
     }
