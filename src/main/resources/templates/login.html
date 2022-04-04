@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">    
 </head>
@@ -14,20 +12,33 @@
         <h2>Login</h2>
     </div>
 
-        <form action="">
-        <div class="camposlogin">
-            <p>Nome</p>
-            <input type="text">
+    <form th:action="@{/login}" method="post">        
+        
+        <div th:if="${param.error}">
+            <div class="alert alert-danger"> Login ou senha invalidos</div>
+        </div>
+
+        <div th:if="${param.logout}">
+            <div class="alert alert-danger"> Login ou senha invalidos</div>
+        </div>
+        
+        <div class="form-group" style="margin-top: 5%;">
+            <p>Login</p>
+            <input id="login" type="text" class="form-control" id="login" name="login" required autofocus="autofocus">
+        </div>
+        <div class="form-group">
             <p>Senha</p>
-            <input type="password">
+            <input id="senha" type="password" class="form-control" id="senha" name="senha" required autofocus="autofocus">
         </div>
-        <div class="botaologar">
-            <button>Logar</button>
-        </div>
-        <div class="col">
-            <a href="/cadastro"> Cadastrar novo</a>
+        <div class="form-group" style="margin-top: 5%;">
+            <button type="submit" name="login-submit" class="btn btn-info">Logar</button>
         </div>
     </form>
+
+    <div class="form-group" style="margin-top: 10%; margin-left: 20%;">
+        <a href="/cadastro"> Cadastrar novo</a>
+    </div>
+    
     
 </body>
 </html>
