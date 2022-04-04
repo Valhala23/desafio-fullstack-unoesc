@@ -22,6 +22,7 @@ public class Usuario {
     private String nomeCompleto;
     private String login;
     private String senha;
+    private String municipio;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
@@ -32,14 +33,24 @@ public class Usuario {
                 name = "role_id", referencedColumnName = "codigo"))    
     private Collection<Role> roles;
 
-    public Usuario(Long codigo, String nomeCompleto, String login, String senha, Collection<Role> roles) {
+    public Usuario(Long codigo, String nomeCompleto, String login, String senha, String municipio,
+            Collection<Role> roles) {
         this.codigo = codigo;
         this.nomeCompleto = nomeCompleto;
         this.login = login;
         this.senha = senha;
+        this.municipio = municipio;
         this.roles = roles;
     }
     
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
+
     public Usuario() {}
 
     public Long getCodigo() {
