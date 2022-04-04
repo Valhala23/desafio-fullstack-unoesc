@@ -49,28 +49,4 @@ public class ControleInicial {
         return "index";
 	} 
 
-    // @GetMapping("/testeinf")
-	// public String insereUfTeste()
-    // {     
-
-    //     try {
-    //         ufDao.insere(); 
-    //     }catch(Exception e){
-    //         System.out.println(e.getMessage());
-    //     }
-
-    //     return "index";
-	// } 
-    
-    // @GetMapping("/testesel")
-	// public String selecionaTeste()
-    // { 
-    //     try {
-    //        // clidao.seleciona(); 
-    //     }catch(Exception e){
-    //         System.out.println(e.getMessage());
-    //     }
-
-    //     return "index";
-	// } 
 }

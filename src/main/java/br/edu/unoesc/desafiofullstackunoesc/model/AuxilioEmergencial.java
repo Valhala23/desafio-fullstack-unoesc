@@ -26,7 +26,8 @@ public class AuxilioEmergencial {
     @SerializedName(value="valor", alternate="valorTotal")
     private double valorTotal;
     @SerializedName(value="mesDisponibilizacao", alternate="mesano")
-    @Transient String dataAux;    
+    @Transient 
+    public String dataAux;    
     
     public AuxilioEmergencial(Long codigo, Date dataConsulta, String numeroParcela, double valorTotal) {
         this.codigo = codigo;
