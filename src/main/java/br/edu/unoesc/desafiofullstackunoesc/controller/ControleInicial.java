@@ -31,21 +31,6 @@ public class ControleInicial {
         return "index";
 	}
 
-    @GetMapping("/cadastro")
-	public String cadastronovo(Model model)
-    {  
-        model.addAttribute("usuario", new UsuarioDto());      
-        return "cadastro";
-	}
-
-    @PatchMapping("/concluidocadastro")
-	public String concluicadastro(@ModelAttribute("usuario") Usuario usuario, Model model)
-    {     
-        model.addAttribute("usuario", new UsuarioDto());
-        usuarioService.salvaUsuario(usuario);
-        return "/";
-	}
-
     @GetMapping("/testeinsere")
 	public String insereTeste()
     {     

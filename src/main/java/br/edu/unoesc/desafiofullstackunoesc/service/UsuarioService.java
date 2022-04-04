@@ -12,7 +12,7 @@ public class UsuarioService {
     UsuarioRepository userRepo;
 
    public  Usuario salvaUsuario(Usuario usuario){
-        return userRepo. save(usuario);
+        return userRepo.save(usuario);
     }
 }
 ;

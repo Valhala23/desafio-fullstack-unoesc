@@ -1,8 +1,6 @@
 package br.edu.unoesc.desafiofullstackunoesc.service;
 
 import java.lang.reflect.Type;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
