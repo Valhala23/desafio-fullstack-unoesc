@@ -11,7 +11,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         .cors().and()
         .csrf().disable().authorizeRequests()
         .antMatchers("/login", "/cadastro", "/concluidocadastro").permitAll()
-        //.antMatchers("/users").hasRole("manager")
         .anyRequest().authenticated()
         .and()
         .formLogin();
